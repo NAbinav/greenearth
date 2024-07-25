@@ -2,13 +2,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  font-smooth: antialiased;
   text-rendering: optimizeLegibility;
 }
 
@@ -105,16 +105,22 @@ fieldset {
   padding: 10px;
   font-size: 15px;
 }
-
-#contact button[type="submit"]:hover {
-  background: #43A047;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+.qr-link {
+  display: inline-block; /* Ensures the link behaves like a block element */
+  padding: 10px 20px; /* Adds padding inside the link for better clickability */
+  background-color: #007bff; /* Sets background color to a shade of blue */
+  color: #fff; /* Sets text color to white */
+  text-decoration: none; /* Removes default underline */
+  border: 1px solid #007bff; /* Adds a border around the link */
+  border-radius: 5px; /* Rounds the corners of the border */
+  text-align: center; /* Centers the text horizontally */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
 }
 
-#contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+/* Hover state */
+.qr-link:hover {
+  background-color: #0056b3; /* Darkens the background color on hover */
+  color: #fff; /* Keeps text color white on hover */
 }
 
 .copyright {
