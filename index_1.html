@@ -7,6 +7,33 @@
   
 
 </head>
+  <script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.querySelector('input[type="text"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.token) {
+        alert('Login successful!');
+        // Handle successful login, e.g., redirect or store token
+      } else {
+        alert('Login failed: ' + data.message);
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+</script>
+
 
 <body>
   <div class="wrapper">
